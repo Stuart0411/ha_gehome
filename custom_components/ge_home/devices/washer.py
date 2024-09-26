@@ -39,6 +39,25 @@ class WasherApi(ApplianceApi):
             GeErdSensor(self, ErdCode.LAUNDRY_WASHER_WASHTEMP_LEVEL),
             GeErdSensor(self, ErdCode.LAUNDRY_WASHER_SPINTIME_LEVEL, icon_override="mdi:speedometer"),
             GeErdSensor(self, ErdCode.LAUNDRY_WASHER_RINSE_OPTION, icon_override="mdi:shimmer"),
+            GeErdBinarySensor(
+                api=self,
+                erd_code.LAUNDRY_WASHER_REMOTE_START_ENABLE,
+                name="Remote Start Enabled", 
+            ), 
+            GeErdPropertyBinarySensor(
+                api=self,
+                erd_code=ErdCode.LAUNDRY_WASHER_USER_SETTING,
+                erd_property="lock_control",
+                 icon="mdi:lock",
+                name"Control Lock Enabled",
+            ),
+            GeErdPropertySensor(
+                api=self,
+                erd_code=ErdCode.LAUNDRY_WASHER_USER_SETTING,
+                erd_property="Cotton"
+                 icon="mdi:water",
+                name="Presoak Enabled",
+            )
         ]
 
         if self.has_erd_code(ErdCode.LAUNDRY_WASHER_DOOR_LOCK):

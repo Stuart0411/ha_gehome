@@ -48,14 +48,14 @@ class WasherApi(ApplianceApi):
                 api=self,
                 erd_code=ErdCode.LAUNDRY_WASHER_USER_SETTING,
                 erd_property="lock_control",
-                 icon="mdi:lock",
+#                 icon="mdi:lock",
                 name"Control Lock Enabled",
             ),
             GeErdPropertySensor(
                 api=self,
                 erd_code=ErdCode.LAUNDRY_WASHER_USER_SETTING,
                 erd_property="Cotton"
-                 icon="mdi:water",
+#                icon="mdi:water",
                 name="Presoak Enabled",
             )
         ]
